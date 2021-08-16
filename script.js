@@ -19,10 +19,9 @@ choices.forEach(choice => choice.addEventListener("click", function () {
         
         displayRoundResult(playGame(computerChoice, playerChoice), computerChoice, playerChoice);
         
-        count++;
-        if(count==5){
+        
+        if(playerWin==5 || computerWin==5){
             result();
-            count=0;
             playerWin=0;
             computerWin=0;
         }
