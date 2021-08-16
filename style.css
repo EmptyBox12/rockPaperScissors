@@ -1,0 +1,50 @@
+html, body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#top{
+    display: flex;
+    align-content: center;
+    flex: 0;
+    width: 100%;
+    font-size: large;
+    background-color: aqua;
+    justify-content: center;
+
+}
+#middle{
+    display: flex;
+    flex: 2;
+    justify-content: space-evenly;
+    height: 50vh;
+    align-items: center;
+    background-color: bisque;
+
+    
+   
+    
+}
+.image-text{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+}
+.image-text img{
+    width: 70%;
+}
+.image-text p{
+    font-size: large;
+}
+
+#bottom{
+    display: flex;
+    justify-content: center;
+    flex: 0;
+    background-color: lightsalmon;
+}
+
+

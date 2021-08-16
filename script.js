@@ -70,6 +70,6 @@ function game() {
         alert("You lost with " + computerWin + " loses.")
     }
 }
-game();
+
 
 
