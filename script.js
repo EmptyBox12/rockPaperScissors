@@ -1,20 +1,25 @@
 let computerWin = 0;
 let playerWin = 0;
 let computerChoice = "";
-let playerChoice = "";
+let playerChoice="";
+
 
 function getComputerChoice() {
     let choices = ["rock", "paper", "scissors"]
     return choices[Math.floor(Math.random() * choices.length)];
 
 }
+const choices = document.querySelectorAll(".choice");
+choices.forEach(choice => choice.addEventListener("click", function() {
+    let pChoice = this.value;
+    playerChoice = pChoice;
+    computerChoice= getComputerChoice();
+    playGame(computerChoice , playerChoice);
+    
+    
+}));
 
-function getPlayerChoice() {
-    let choice = prompt("What is your choice?", "Rock");
-    return choice.toLowerCase();
 
-
-}
 function playGame(computerChoice, playerChoice) {
 
     let winner = 0;
@@ -22,21 +27,27 @@ function playGame(computerChoice, playerChoice) {
     if (computerChoice === "rock" && playerChoice == "scissors") {
         computerWin++;
         winner=2;
+        alert("You lost");
         return winner;
     } else if (computerChoice === "scissors" && playerChoice === "paper") {
         computerWin++;
         winner=2;
+        alert("Lost")
         return winner;
     } else if (computerChoice === "paper" && playerChoice === "rock") {
         computerWin++;
         winner=2;
+        alert("Lost");
         return winner;
     } else if (computerChoice === playerChoice) {
+        alert("Tie");
         return winner;
+        
 
     } else {
         playerWin++;
         winner= 1;
+        alert("Win");
         return winner;
     }
 
@@ -56,8 +67,8 @@ function displayRoundResult(winner, computerChoice, playerChoice) {
 
 function game() {
     let count = parseInt(prompt("How many games do you want to play? ", 3));
-    for (let i = 0; i < count; i++) {
-        playerChoice = getPlayerChoice();
+    for (let i = 0; i < 5; i++) {
+       
         computerChoice = getComputerChoice();
         displayRoundResult(playGame(computerChoice, playerChoice), computerChoice, playerChoice);
 
@@ -70,6 +81,7 @@ function game() {
         alert("You lost with " + computerWin + " loses.")
     }
 }
+
 
 
 

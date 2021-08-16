@@ -4,6 +4,7 @@ html, body{
     flex-direction: column;
     height: 100%;
 }
+
 #top{
     display: flex;
     align-content: center;
@@ -31,10 +32,11 @@ html, body{
     flex-direction: column;
     justify-items: center;
     align-items: center;
+   
 
 }
-.image-text img{
-    width: 70%;
+.image-text input{
+    width: 50%;
 }
 .image-text p{
     font-size: large;
