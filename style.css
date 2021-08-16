@@ -58,6 +58,7 @@ html, body{
     justify-content: center;
     background-color: bisque;
     align-items: center;
+
     
 
     
@@ -65,6 +66,7 @@ html, body{
 #scores {
     font-size: large;
     border: rgb(16, 29, 29) solid 2px;
+    border-radius: 30px;
     padding: 5px;
     margin-bottom: 20vh;
     background-color: lightsteelblue;
