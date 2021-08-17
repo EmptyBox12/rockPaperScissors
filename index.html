@@ -5,13 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <script src="script.js">
-      
-    </script>
+    <div id="top">
+        <p>The Rock, Paper and Scissors Game</p>
+    </div>
+    <div id="main">
+        <div id="middle">
+            <div class="image-text">
+                <input type="image" class="choice" name="rock" src="images/rock.png" value="rock">
+                <p>Choose Rock</p>
+            </div>
+            <div class="image-text">
+                <input type="image" class="choice" name="paper" src="images/paper.png" value="paper">
+                <p>Choose Paper</p>
+            </div>
+            <div class="image-text">
+                <input type="image" name="scissors" class="choice" src="images/scissors.png" value="scissors">
+                <p>Choose Scissors</p>
+            </div>
+
+
+        </div>
+        <div id="scoreDisplay">
+            <p id="scores">Scores</p>
+            <p id="info">First to reach 5 wins!!</p>
+
+        </div>
+    </div>
+
+    <div id="bottom">
+        <p>This is a game made by Ataberk Tümay</p>
+    </div>
 
 </body>
 

@@ -2,74 +2,95 @@ let computerWin = 0;
 let playerWin = 0;
 let computerChoice = "";
 let playerChoice = "";
+let count = 0;
+
 
 function getComputerChoice() {
     let choices = ["rock", "paper", "scissors"]
     return choices[Math.floor(Math.random() * choices.length)];
 
 }
+const choices = document.querySelectorAll(".choice");
 
-function getPlayerChoice() {
-    let choice = prompt("What is your choice?", "Rock");
-    return choice.toLowerCase();
+choices.forEach(choice => choice.addEventListener("click", function () {
+        let pChoice = this.value;
+        playerChoice = pChoice;
+        computerChoice = getComputerChoice();
+        
+        displayRoundResult(playGame(computerChoice, playerChoice), computerChoice, playerChoice);
+        
+        
+        if(playerWin==5 || computerWin==5){
+            result();
+            playerWin=0;
+            computerWin=0;
+        }
+
+    }));
+    
 
 
-}
+
+
 function playGame(computerChoice, playerChoice) {
 
     let winner = 0;
 
     if (computerChoice === "rock" && playerChoice == "scissors") {
         computerWin++;
-        winner=2;
+        winner = 2;
+
         return winner;
     } else if (computerChoice === "scissors" && playerChoice === "paper") {
         computerWin++;
-        winner=2;
+        winner = 2;
+
         return winner;
     } else if (computerChoice === "paper" && playerChoice === "rock") {
         computerWin++;
-        winner=2;
+        winner = 2;
+
         return winner;
     } else if (computerChoice === playerChoice) {
+
         return winner;
+
 
     } else {
         playerWin++;
-        winner= 1;
+        winner = 1;
+
         return winner;
     }
 
 
 }
 function displayRoundResult(winner, computerChoice, playerChoice) {
+    document.querySelector("#scores").textContent = playerWin+" : "+computerWin;
+    
     if (winner === 1) {
-        alert("You won this round!! " + playerChoice + " beats " + computerChoice);
+        document.querySelector("#info").textContent="You won this round!! " + playerChoice + " beats " + computerChoice;
     } else if (winner === 0) {
-        alert("Draw!!")
+        document.querySelector("#info").textContent="Draw!!";
     } else {
-        alert("You lost this round!! " + computerChoice + " beats " + playerChoice);
+        document.querySelector("#info").textContent="You lost this round!! " + computerChoice + " beats " + playerChoice;
     }
 
 }
 
 
-function game() {
-    let count = parseInt(prompt("How many games do you want to play? ", 3));
-    for (let i = 0; i < count; i++) {
-        playerChoice = getPlayerChoice();
-        computerChoice = getComputerChoice();
-        displayRoundResult(playGame(computerChoice, playerChoice), computerChoice, playerChoice);
+function result() {
 
-    }
+
     if (playerWin > computerWin) {
-        alert("You won with " + playerWin + " wins.");
+        document.querySelector("#info").textContent="You won with " + playerWin + " wins.";
     } else if (playerWin == computerWin) {
-        alert("It's a tie");
+        document.querySelector("#info").textContent="It's a tie";
     } else {
-        alert("You lost with " + computerWin + " loses.")
+        document.querySelector("#info").textContent="You lost with " + computerWin + " loses.";
     }
 }
-game();
+
+
 
 
