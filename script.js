@@ -67,12 +67,13 @@ function playGame(computerChoice, playerChoice) {
 }
 function displayRoundResult(winner, computerChoice, playerChoice) {
     document.querySelector("#scores").textContent = playerWin+" : "+computerWin;
+    
     if (winner === 1) {
-        alert("You won this round!! " + playerChoice + " beats " + computerChoice);
+        document.querySelector("#info").textContent="You won this round!! " + playerChoice + " beats " + computerChoice;
     } else if (winner === 0) {
-        alert("Draw!!")
+        document.querySelector("#info").textContent="Draw!!";
     } else {
-        alert("You lost this round!! " + computerChoice + " beats " + playerChoice);
+        document.querySelector("#info").textContent="You lost this round!! " + computerChoice + " beats " + playerChoice;
     }
 
 }
@@ -82,11 +83,11 @@ function result() {
 
 
     if (playerWin > computerWin) {
-        alert("You won with " + playerWin + " wins.");
+        document.querySelector("#info").textContent="You won with " + playerWin + " wins.";
     } else if (playerWin == computerWin) {
-        alert("It's a tie");
+        document.querySelector("#info").textContent="It's a tie";
     } else {
-        alert("You lost with " + computerWin + " loses.")
+        document.querySelector("#info").textContent="You lost with " + computerWin + " loses.";
     }
 }
 

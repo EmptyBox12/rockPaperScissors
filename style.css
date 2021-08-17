@@ -61,9 +61,10 @@ html, body{
 #scoreDisplay{
     display: flex;
     flex:1;
-    justify-content: center;
+    justify-content:center;
     background-color: bisque;
     align-items: center;
+    flex-direction: column;
 
     
 
@@ -74,7 +75,7 @@ html, body{
     border: rgb(16, 29, 29) solid 2px;
     border-radius: 30px;
     padding: 5px;
-    margin-bottom: 20vh;
+    
     background-color: lightsteelblue;
     width: 40vh;
     text-align: center;
@@ -84,6 +85,17 @@ html, body{
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+#info{
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 50px;
+    padding: 5px 10px 5px 10px;
+    width: 35vh;
+    margin-top: 10px;
+    background-color: papayawhip;
+
+    
 }
 
 
